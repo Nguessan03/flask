@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <title>Formulire d'Inscription</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>Registration</header>
+
+      <form
+        action="{{url_for('insert')}}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form first">
+          <div class="details personal">
+            <span class="title">Informations Personnels</span>
+
+            <div class="fields">
+              <div class="input-field">
+                <label>Nom</label>
+                <input
+                  class="border border-white"
+                  type="text"
+                  placeholder="Nom"
+                  name="firstname"
+                />
+              </div>
+              <div class="input-field">
+                <label>Prenom</label>
+                <input
+                  class="border border-white"
+                  type="text"
+                  placeholder="Prenom"
+                  name="lastname"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Date de naissance</label>
+                <input
+                  class="border border-white"
+                  type="date"
+                  placeholder="date d'anniversaire"
+                  name="birthdate"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Sexe</label>
+                <select name="gender">
+                  <option disabled selected>Selectionner le genre</option>
+                  <option value="homme">Homme</option>
+                  <option value="femme">Femme</option>
+                  <option value="autre">Autres</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Poids(en kg)</label>
+                <input type="number" placeholder="votre poids" name="poid" />
+              </div>
+
+              <div class="input-field">
+                <label>Taille (en cm)</label>
+                <input type="number" placeholder="votre taille" name="taille" />
+              </div>
+            </div>
+          </div>
+
+          <div class="details ID">
+            <span class="title">Compte</span>
+
+            <div class="fields">
+              <div class="input-field">
+                <label>Nom d'Utilisateur</label>
+                <input type="text" placeholder="pseudo" name="username" />
+              </div>
+
+              <div class="input-field">
+                <label>Adress e-mail</label>
+                <input type="text" placeholder="e-mail" name="email" />
+              </div>
+
+              <div class="input-field">
+                <label>Mot de passe</label>
+                <input type="password" placeholder="mot de passe" name="password" />
+              </div>
+
+              <div class="input-field">
+                <label>Confirmer le mot de passe</label>
+                <input type="password" placeholder="confirmer" name="confirm" />
+              </div>
+              <div class="input-field">
+                <label>Photo de profile</label>
+                <input
+                  class="input-file"
+                  type="file"
+                  placeholder="photo"
+                  name="file"
+                />
+              </div>
+              <div class="input-textearea">
+                <label for="objectif">Objectif</label>
+                <textarea
+                  name="objectif"
+                  id="objectif"
+                  cols="35"
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="btns">
+              <ul>
+                <li>
+                  <button class="Btn" type="submit">
+                    <span class="btnText">Inscription</span>
+                  </button>
+                </li>
+                  </ul>
+                </form>
+            
+              <ul>
+                <li>
+                  <a href="{{url_for('home')}}" class="btn">
+                    <span class="btnText">Se Connecter</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+    </div>
+  </body>
+</html>
